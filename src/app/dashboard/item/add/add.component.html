@@ -1,0 +1,12 @@
+<h1>QR Scan</h1>
+
+<ng-container *ngFor="let camera of cameras">
+  {{camera.deviceId}}
+</ng-container>
+
+<zxing-scanner
+  [formats]="allowedFormats"
+  (camerasFound)="camerasFoundHandler($event)"
+  (scanSuccess)="scanSuccessHandler($event)"
+></zxing-scanner>
+
